@@ -595,7 +595,11 @@ input:focus{
     transition: ease-in 2s;
 }
 
-
+#current_date_time_block{
+    font-size: 100px;
+    line-height: 50px;
+    color: white;
+}
 
 
 
