@@ -242,7 +242,6 @@ input:focus{
 
 
 .button{
-    padding-left: 30px;
     display: flex;
 }
 
@@ -260,6 +259,7 @@ input:focus{
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     text-decoration: none;
+    margin-left: 30px;
 }
 .button1:hover{
     background: linear-gradient(to left, #39b67a, var(--blue));
@@ -595,7 +595,7 @@ input:focus{
     transition: ease-in 2s;
 }
 
-#current_date_time_block{
+#datetime{
     font-size: 100px;
     line-height: 50px;
     color: white;
@@ -603,4 +603,5 @@ input:focus{
 
 
 
- 
+
+

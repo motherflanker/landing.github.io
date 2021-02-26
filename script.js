@@ -167,8 +167,7 @@ function show_popap(id_popap) {
   });
 
 
-
-  
+//==========================//
 
 
   function show_popap(id_popap) {
@@ -180,7 +179,6 @@ function show_popap(id_popap) {
     $(".overlay2").removeClass("active");
   });
 
-  
 
 //==========================================================//
 
@@ -218,5 +216,54 @@ alert("Come to the fire then, " + firstName);
 
 //==========================================================//
 
+function zeros(value){
+    if (value < 10){
+        value='0'+value;
+    }
+    return value;
+}
+
+function date_time(){
+    var current_datetime = new Date();
+    var day = zeros(current_datetime.getDate());
+    var month = zeros(current_datetime.getMonth()+1);
+    var year = current_datetime.getFullYear();
+    var hours = zeros(current_datetime.getHours());
+    var minutes = zeros(current_datetime.getMinutes());
+    var seconds = zeros(current_datetime.getSeconds());
+                 
+    return day+"."+month+"."+year+" "+ '/' +" "+hours+":"+minutes+":"+seconds;
+}
+            
+document.getElementById('datetime').innerHTML = date_time();
+setInterval(function () {
+    document.getElementById('datetime').innerHTML = date_time();
+}, 1000);
+
+//==========================================================//
+
+
+$(function(){
+    $(".button3").click(function(){
+        let str1 = prompt("Enter str1");
+        let str2 = prompt("Enter str2");
+        if(str1 == str2){
+            alert("True");
+        }
+        else alert("False");
+    })
+});
+
+$(function(){
+    $(".button4").click(function(){
+        let A = prompt("Enter base");
+        let H = prompt("Enter height");
+        let s = area(A,H);
+        function area(A, H){
+            return `Area = ${0.5 * A * H}`;
+        }
+        alert(s);
+    })
+});
 
 
