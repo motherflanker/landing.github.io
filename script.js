@@ -1,3 +1,8 @@
+let firstName = prompt('What is your name?');
+alert("Come to the fire then, " + firstName);
+
+//==========================================================//
+
 const DATA = [
     {
         question: 'Question 1',
@@ -158,43 +163,29 @@ renderQuestions(0);
 //==========================================================//
 
 function show_popap(id_popap) {
-    var id = "#" + id_popap;
+    let id = "#" + id_popap;
     $(id).addClass('active');
-  }
+}
   
-  $(".close_popap").click( function(){
+$(".close_popap").click( function(){
     $(".overlay").removeClass("active");
-  });
+});
 
 
 //==========================//
 
 
-  function show_popap(id_popap) {
-    var id = "#" + id_popap;
+function show_popap(id_popap) {
+    let id = "#" + id_popap;
     $(id).addClass('active');
-  }
+}
   
-  $(".overlay2").click( function(){
+$(".overlay2").click( function(){
     $(".overlay2").removeClass("active");
-  });
+});
 
 
 //==========================================================//
-
-//=========================низя=============================//
-$(function () {
-    $('.min').click(function () {
-        if ($('nav ul').css('display') == 'none') {
-            $('nav ul').slideDown();
-        }
-        else {
-            $('nav ul').slideUp();
-        }
-    });
-});
-//=========================низя=============================//
-
 
 
 //==========================================================//
@@ -211,9 +202,6 @@ function name_save(){
 }
 
 
-let firstName = prompt('What is your name?');
-alert("Come to the fire then, " + firstName);
-
 //==========================================================//
 
 function zeros(value){
@@ -224,13 +212,13 @@ function zeros(value){
 }
 
 function date_time(){
-    var current_datetime = new Date();
-    var day = zeros(current_datetime.getDate());
-    var month = zeros(current_datetime.getMonth()+1);
-    var year = current_datetime.getFullYear();
-    var hours = zeros(current_datetime.getHours());
-    var minutes = zeros(current_datetime.getMinutes());
-    var seconds = zeros(current_datetime.getSeconds());
+    let current_datetime = new Date();
+    let day = zeros(current_datetime.getDate());
+    let month = zeros(current_datetime.getMonth()+1);
+    let year = current_datetime.getFullYear();
+    let hours = zeros(current_datetime.getHours());
+    let minutes = zeros(current_datetime.getMinutes());
+    let seconds = zeros(current_datetime.getSeconds());
                  
     return day+"."+month+"."+year+" "+ '/' +" "+hours+":"+minutes+":"+seconds;
 }
@@ -243,27 +231,81 @@ setInterval(function () {
 //==========================================================//
 
 
-$(function(){
+/*$(function(){
     $(".button3").click(function(){
         let str1 = prompt("Enter str1");
         let str2 = prompt("Enter str2");
-        if(str1 == str2){
+        if(str1.length == str2.length){
             alert("True");
         }
         else alert("False");
     })
-});
+});*/
 
-$(function(){
+
+//реализация без jquery//
+
+function compare(){
+    let str1 = prompt("Enter str1");
+    let str2 = prompt("Enter str2");
+    if(str1.length == str2.length){
+        alert("They are of the same length");
+    }
+    else alert("They are NOT of the same length");
+}
+
+//==========================================================//
+
+/*$(function(){
     $(".button4").click(function(){
         let A = prompt("Enter base");
         let H = prompt("Enter height");
         let s = area(A,H);
         function area(A, H){
-            return `Area = ${0.5 * A * H}`;
+            if(!isNaN(A && H)){
+                return `Area = ${0.5 * A * H}`;
+            }
+            else alert("Enter only numbers please");
         }
         alert(s);
     })
-});
+});*/
+
+
+//реализация без jquery//
+
+function area(){
+    let A = prompt("Enter base");
+    let H = prompt("Enter height");
+    let res = calc(A,H);
+    function calc(A,H){
+        if(!isNaN(A && H)){
+            return `Area = ${0.5 * A * H}`;
+        }
+        alert("Enter only numbers please");
+    }
+    alert(res);
+}
+
+//==========================================================//
+//реализация без jquery//
+
+
+function minmax(){
+    const arr = [];
+    let n = prompt("Enter the size of the array");
+    for(let i = 0; i < n; i++){
+        arr[i] = +Number(prompt("Enter element number " + (i+1), 0));
+    }
+    let min = arr[0];
+    let max = arr[0];
+    for(let k = 0; k < n; k++){
+        if(arr[k] < min) min = arr[k];
+        if(arr[k] > max) max = arr[k];
+    }
+    return alert(`Min = ` + min + `, ` + `Max = ` + max);
+}
+
+
 
 
