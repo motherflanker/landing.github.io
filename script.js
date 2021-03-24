@@ -307,5 +307,11 @@ function minmax(){
 }
 
 
+//==========================================================//
+
+
+function redirect(){
+    document.location.href = "task2.html";
+}
 
 
